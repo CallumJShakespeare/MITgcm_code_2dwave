@@ -40,9 +40,9 @@ C     == Global variables ==
 #include "SURFACE.h"
 #include "DYNVARS.h"
 #include "NH_VARS.h"
-#ifdef ALLOW_ADDFLUID
-# include "FFIELDS.h"
-#endif
+C#ifdef ALLOW_ADDFLUID
+#include "FFIELDS.h"
+C#endif
 #ifdef ALLOW_MOM_COMMON
 # include "MOM_VISC.h"
 #endif
@@ -607,17 +607,19 @@ C-    endif momAdvection.
       
       
 C    Add terms for advection by tidal flow
-C      DO j=jMin,jMax
-C       DO i=1-OLx+1,sNx+OLx-1
+      DO j=jMin,jMax
+       DO i=1-OLx+1,sNx+OLx-1
 C       dWdx= 0.5*(wVel(i+1,j,k,bi,bj)
 C     &      -wVel(i,j,k,bi,bj))*recip_DXF(i+1,j,bi,bj)
 C     &    + 0.5*(wVel(i,j,k,bi,bj)
 C     &      -wVel(i-1,j,k,bi,bj))*recip_DXF(i,j,bi,bj)
-C          gW(i,j,k,bi,bj) = gW(i,j,k,bi,bj)
+          gW(i,j,k,bi,bj) = gW(i,j,k,bi,bj)
+     &              -wVel(i,j,k,bi,bj)/tauLD
+     &              *tauLDmask(i,j,k,bi,bj)
 C     &      +tidalVelocity*sin(tidalFreq*myTime)*dWdx
 C     &      +constVelocity*dWdx
-C       ENDDO
-C      ENDDO
+       ENDDO
+      ENDDO
       
 C Add the y Coriolis force
 C      DO j=jMin,jMax

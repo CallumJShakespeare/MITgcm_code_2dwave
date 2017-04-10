@@ -116,6 +116,7 @@ c     rhoConstFresh       = 999.8 _d 0
       yCoriolis           = 0. _d 0
       yGravity            = 0. _d 0
       constVelocity       = 0. _d 0
+      tauLD               = 3600. _d 0
 C-    Earth rotation period is 86400*365.25/366.25 (use to be 1.day)
       rotationPeriod      = 86164. _d 0
       omega               = UNSET_RL
@@ -350,6 +351,7 @@ C--   Time stepping parameters
 
 C--   Input files
       bathyFile       = ' '
+      tauLDmaskFile   = ' '
       topoFile        = ' '
       addWwallFile    = ' '
       addSwallFile    = ' '

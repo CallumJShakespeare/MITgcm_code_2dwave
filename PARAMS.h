@@ -95,7 +95,7 @@ C     the_run_name    :: string identifying the name of the model "run"
      &                saltClimFile,
      &                EmPmRfile, saltFluxFile,
      &                surfQfile, surfQnetFile, surfQswFile,
-     &                UbarFile, VbarFile,
+     &                UbarFile, VbarFile, tauLDmaskFile,
      &                lambdaThetaFile, lambdaSaltFile,
      &                uVelInitFile, vVelInitFile, pSurfInitFile,
      &                pLoadFile, addMassFile,
@@ -145,6 +145,7 @@ C     the_run_name    :: string identifying the name of the model "run"
       CHARACTER*(MAX_LEN_FNAM) lambdaThetaFile
       CHARACTER*(MAX_LEN_FNAM) lambdaSaltFile
       CHARACTER*(MAX_LEN_PREC/2) the_run_name
+      CHARACTER*(MAX_LEN_FNAM) tauLDmaskFile
 
 C--   COMMON /PARM_I/ Integer valued parameters used by the model.
 C     cg2dMaxIters        :: Maximum number of iterations in the
@@ -754,7 +755,7 @@ C     psiEuler      :: Euler angle, rotation about new z-axis
      & abEps, alph_AB, beta_AB,
      & rSphere, recip_rSphere, radius_fromHorizGrid,
      & tidalVelocity, tidalFreq, yCoriolis, yGravity, constVelocity,
-     & f0, beta, fPrime, omega, rotationPeriod,
+     & f0, beta, fPrime, omega, rotationPeriod, tauLD,
      & viscFacAdj, viscAh, viscAhW, smag3D_coeff,
      & viscAhMax, viscAhGrid, viscAhGridMax, viscAhGridMin,
      & viscC2leith, viscC2leithD,
@@ -815,6 +816,7 @@ C     psiEuler      :: Euler angle, rotation about new z-axis
       _RL constVelocity
       _RL yCoriolis
       _RL yGravity
+      _RL tauLD
       _RL f0
       _RL beta
       _RL fPrime

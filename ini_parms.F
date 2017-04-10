@@ -190,7 +190,7 @@ C--   Continuous equation parameters
      & diffKhT, diffK4T, diffKhS, diffK4S,
      & tRef, sRef, tRefFile, sRefFile, rhoRefFile,
      & tidalVelocity, tidalFreq, yGravity, yCoriolis,constVelocity,
-     & eosType, integr_GeoPot, selectFindRoSurf,
+     & eosType, integr_GeoPot, selectFindRoSurf, tauLD,
      & HeatCapacity_Cp, celsius2K, atm_Cp, atm_Rd, atm_Rq, atm_Po,
      & no_slip_sides, sideDragFactor,
      & no_slip_bottom, bottomDragLinear, bottomDragQuadratic,
@@ -277,7 +277,7 @@ C--   Input files
       NAMELIST /PARM05/
      & bathyFile, topoFile, addWwallFile, addSwallFile, shelfIceFile,
      & diffKrFile, viscAhDfile, viscAhZfile, viscA4Dfile, viscA4Zfile,
-     & hydrogThetaFile, hydrogSaltFile,
+     & hydrogThetaFile, hydrogSaltFile, tauLDmaskFile,
      & maskIniTemp, maskIniSalt, checkIniTemp, checkIniSalt,
      & zonalWindFile, meridWindFile,
      & thetaClimFile, saltClimFile,

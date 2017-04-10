@@ -131,7 +131,8 @@ C     &      +constVelocity*dudx
           gU(i,j,kLev,bi,bj) = gU(i,j,kLev,bi,bj)
      &      +(tidalVelocity*tidalFreq*cos(tidalFreq*myTime)
      &      )*maskW(i,j,kLev,bi,bj)
-     &      -uVel(i,j,kLev,bi,bj)/tauLD*tauLDmask(kLev)
+     &      -uVel(i,j,kLev,bi,bj)/tauLD
+     &      *tauLDmask(i,j,kLev,bi,bj)
         ENDDO
        ENDDO
        
@@ -302,7 +303,8 @@ C     &          *maskS(i+1,j,kLev,bi,bj)
           gV(i,j,kLev,bi,bj) = gV(i,j,kLev,bi,bj)
      &      +f0*(tidalVelocity*sin(tidalFreq*myTime)
      &      +constVelocity)*maskS(i,j,kLev,bi,bj)
-     &   -vVel(i,j,kLev,bi,bj)/tauLD*tauLDmask(kLev)
+     &      -vVel(i,j,kLev,bi,bj)/tauLD
+     &      *tauLDmask(i,j,kLev,bi,bj)
         ENDDO
        ENDDO  
        
